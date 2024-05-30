@@ -1,0 +1,71 @@
+
+/* todo ########################################################## the root color dark & light*/
+
+/* .footer{
+    margin-top: 100px;
+} */
+.footer .flex-footer{
+    width: 100%;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.footer .flex-footer i{
+    font-size: 30px;
+    margin: 5px;
+}
+.footer-part1 .row{
+    background-color: #1B1C20;
+    margin: 50px auto;
+    padding: 20px;
+}
+.footer .flex-footer h3{
+    font-size: 17px;
+    margin: 5px;
+}
+.comment-footer{
+    color: rgb(126,137,139);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-part2 .header-footer{
+    font-size: 20px;
+    color: rgb(92,81,90);
+}
+.user-footer i{
+    margin-bottom: 3px;
+    margin-left: 7px;
+    color: rgb(92,81,90);
+}
+.user-footer p{
+    font-size: 14px;
+    color: rgb(92,81,90);
+    font-weight: 100;
+}
+
+.data-footer i{
+    font-size: 20px;
+}
+.footer-title-part3{
+    font-size: 18px;
+}
+.paragraf-footer{
+    font-size: 15px;
+    color: rgb(92,81,90);
+    font-weight: 100;
+}
+
+#arrowUp{
+    padding: 10px;
+    background-color: #FDC111;
+    border-radius: 50%;
+    font-size: 20px;
+}
+@media(max-width: 767px){
+    .footer-part3 p{
+        font-size: 14px !important;
+    }
+}

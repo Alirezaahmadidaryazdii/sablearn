@@ -1,0 +1,152 @@
+
+:root{
+    --primary-dark: rgb(16, 18, 20);
+    --primary-light: rgb(254, 254, 254);
+
+    --secondary-dark: rgb(26, 29, 31);
+    --secondary-light: rgb(255, 255, 255);
+
+    --text-base-dark: white;
+    --text-base-light: black;
+}
+
+@font-face {
+    font-family: 'iranyacan';
+    src: url('./fonts/iranyekanwebbold.ttf');
+}
+
+* {
+    font-family: 'iranyacan';
+    box-sizing: border-box;
+}
+
+.pates2 {
+    display: block;
+    animation-duration: 1s;
+    animation-name: anim;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+.tempes {
+    display: none;
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+    box-shadow: none;
+}
+.swiper-slide{
+    box-shadow: none;
+    border: 1px solid #dfe6e9;
+    border-radius: 15px;
+}
+.swiper-slide .card {
+    box-shadow: none;
+    border-radius: 15px;
+    border: none;
+}
+.swiper-slide .card img{
+    width: 150px;
+    border-radius: 50%;
+    margin: auto;
+
+}
+
+#h3-swiper{
+    text-align: center;
+    color: black;
+}
+#type-swiper{
+    text-align: center;
+    color: #b2bec3;
+}
+#comment-swiper{
+    text-align: center;
+    font-size: 17px;
+    padding: 10px;
+    color: black !important;
+}
+.header-part4{
+    margin: 20px;
+    padding: 10px;
+}
+.header-part4 h3{
+    font-size: 20px;
+}
+#ElemPrice{
+    color: black;
+}
+
+/* #img-modal-part3{
+    width: 40%;
+} */
+@media (max-width: 767px){
+    .tmepes h3, .tempes h2{
+        font-size: 15px;
+    }
+    .offer-category{
+        font-size: 15px !important;
+    }
+    #img-modal-part3{
+        width: 200px;
+        height: 150px;
+        margin:  0px auto;
+    }
+    #modal-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-modal-part3 h3, .footer-modal-part3 p{
+        font-size: 14px;
+        width: 100%;
+    }
+    .show-modal-comment{
+        font-size: 10px;
+    }
+    .modal-txt{
+        display: flex;
+        flex-direction: column;
+    }
+    .mySwiper{
+        width: 100%;
+        padding: 40px;
+        margin: 0px !important;
+    }
+    .card img{
+        width: 100px !important;
+    }
+    .card h3{
+        font-size: 16px !important;
+    }
+    #type-swiper{
+        font-size: 13px !important;
+    }
+    #comment-swiper{
+        font-size: 10px !important;
+    }
+    .header-part3{
+        width: 100%;
+    }
+    .header-part3 h3{
+        font-size: 14px;
+        width: 100%;
+    }
+    .part2Body{
+        padding: 20px;
+        margin: 0px;
+    }
+}
+

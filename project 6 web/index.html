@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/body.css">
+    <script src="https://kit.fontawesome.com/5cda12d029.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./librarys/bootstrap.fa.min (1).css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./librarys/swiper.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'iranyacan';
+            src: url('./fonts/iranyekanwebbold.ttf');
+        }
+
+        * {
+            font-family: 'iranyacan';
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!--! header   -->
+    <site-header></site-header>
+    <!-- ! body part1 -->
+    <site-body-part1></site-body-part1>
+    <!-- ! body part2 -->
+    <div class="tmepes">
+        <h3 class="category" style="text-align: center;color: rgb(156, 162, 156);"><i class="fa-solid fa-graduation-cap"
+                style="font-size: 30px;"></i>- دسته بندی دوره های آموزشـی -<i class="fa-solid fa-graduation-cap"
+                style="font-size: 30px;"></i></h3>
+        <h2 class="offer-category" style="text-align: center;font-size: 20px">دوره های فراوان در دسته بندی های مختلف
+        </h2>
+    </div>
+    <script>
+        const scrollHandler = function () {
+            const scrollPosition = window.scrollY;
+            console.log(scrollPosition);
+
+            if (Math.round(scrollPosition) >= 176) {
+                let temp = document.querySelector('.tmepes');
+                temp.classList.remove('tempes');
+                temp.classList.add('pates2');
+                window.removeEventListener('scroll', scrollHandler);
+            }
+        };
+        window.addEventListener('scroll', scrollHandler);
+    </script>
+    <div class="part2Body row m-2"></div>
+    <!-- ! body part3 -->
+    <script>
+        data = [
+            { icon: 'fa-brands fa-figma', title: "کارگاه آموزشی UI/UX", count: 1 },
+            { icon: 'fa-brands fa-html5', title: "کارگاه آموزشی HTML", count: 1 },
+            { icon: 'fa-brands fa-css3', title: "کارگاه آموزشی CSS", count: 3 },
+            { icon: 'fa-brands fa-js', title: "کارگاه آموزشی JS", count: 4 },
+            { icon: 'fa-brands fa-node', title: "کارگاه آموزشی نود جی اس", count: 1 },
+            { icon: 'fa-solid fa-brain', title: "کارگاه آموزشی مهارت های نرم", count: 1 },
+            { icon: 'fa-solid fa-shield-halved', title: "کارگاه آموزشی امنیت", count: 1 },
+        ]
+        data.forEach(element => {
+            let siteBodyPart2 = document.createElement('site-body-part2');
+            let item = document.createElement('div')
+            item.classList.add('item-card')
+            item.setAttribute('slot', 'item-cards')
+            let i = document.createElement('i')
+            i.className = `${element.icon}`
+            let h3 = document.createElement('h3')
+            h3.innerHTML = element.title;
+            let p = document.createElement('p')
+            p.innerHTML = `${element.count.toLocaleString('fa-IR')} دوره آموزشی`
+            siteBodyPart2.setAttribute('class', 'col-12 col-md-4 col-lg-3 w-100 m-auto')
+            item.append(i, h3, p)
+            siteBodyPart2.appendChild(item)
+            document.querySelector('.part2Body').append(siteBodyPart2)
+        });
+    </script>
+    <site-body-part3></site-body-part3>
+    <div class="part3Body m-1 row"></div>
+    <!-- ! modal -->
+    <div id="myModal">
+        <!-- Modal content -->
+        <div id="modal-content">
+            <span class="X close"><i class="fa-solid fa-circle-xmark"></i></span>
+            <div class="modal-txt">
+                <img src="" id="img-modal-part3" alt="">
+                <div class="footer-modal-part3">
+                    <h3 id="title-modal-part3"></h3>
+                    <p class="show-modal-comment"></p>
+                    <div class="price-modal">
+                        <p class="disPrice" id="ElemDisPrice"></p>
+                        <p class="price" id="ElemPrice"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let data = [
+            { img: './images/git-scaled.jpg', title: 'دوره گیتهاب و گیت', price: 149000, disPrice: 300000, comment: 'اگر یک سری به آگهی های استخدامی بزنید بدون شک گیت و گیت هاب رو جز مهارت های ضروری استخدام میبینید این ابزار خفن به شما کمک میکنه پروژه هاتونو مدیریت کنید تیمی کار کنید عیب یابی کنید و ...' },
+            { img: './images/Figma-scaled.jpg', title: 'دوره فیگما', price: 260000, disPrice: 460000, comment: 'فیگما یک ابزار طراحی هستش که باهاش طراحی های مختلفی رو انجام میدن مهم ترین وظیفه اش طراحی UI وبسایت هست و میتونید با یادگیری این ابزار در حوزه طراحی شروع به فعالیت کنید' },
+            { img: './images/Html-scaled.jpg', title: 'دوره اچ تی ام ال', price: 300000, disPrice: 400000, comment: 'این دوره صفر تا صد اچ تی ام ال را به زبان ساده در کمترین زمان به شما آموزش داده میشه' },
+            { img: './images/world.jpg', title: 'ورود به دنیای برنامه نویسی', price: 0, disPrice: 0, comment: 'اگر هیچ دانشی به برنامه نویسی وب نداری! اگر میخواهی برنامه نویسی رو یاد بگیری ولی مفاهیم رو نمیدونی!    !!!' },
+            { img: './images/mega.jpg', title: 'مگا فرانت (دوره جامع فرانت اند)', price: 2449000, disPrice: 3500000, comment: 'با توجه به رشد و پیشرفت فناوری های امروزی، بزرگترین شرکت های جهان خدمات و محصولات خود را به صورت آنلاین و از طریق وب ارائه می دهنده' },
+            { img: './images/react.jpg', title: 'دوره متخصص ری اکت', price: 2200000, disPrice: 3000000, comment: 'سلام این دوره هنوز آماده نشده، و در آینده آپلود خواهد شد ...' }
+        ];
+
+        data.forEach((item) => {
+            let part3 = document.querySelector('.part3Body');
+            let patern = `
+        <site-body-part3-2 class="col-lg-4 col-12 col-md-6"id="site-body-part3">
+            <section slot="item-product" id="section-main-parteBody">
+                <img src="${item.img}" id="img-part3-body" alt="">
+                <div class="comment-product">
+                    <h3>${item.title}</h3>
+                    <div class="show-price">
+                        <p class="disPrice">${item.price != 0 ? item.disPrice.toLocaleString('fa-IR') : 'رایگان'}</p>
+                        ${item.price != 0 ? `<p class="price">${item.price.toLocaleString('fa-IR')}   تومان</p>` : `<p class="price">رایگان</p> `}
+                    </div>
+                    <div class="add-shop">
+                        <button id="add" data-shop="success">
+                            افزودن به سبد خرید
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            </button>
+                        <i class="fa-regular fa-eye" id="showModal"></i>
+                    </div>   
+                    <div id='massage-show-detail'><div> 
+                </div>
+            </section>
+        </site-body-part3-2>
+    `;
+            part3.insertAdjacentHTML('beforeend', patern);
+        });
+        let part3Body = document.querySelector('.part3Body')
+        part3Body.addEventListener('click', (e) => {
+            let part3 = document.querySelector('.part3Body');
+            let getData = data.filter(item => {
+                return item.title == e.target.parentElement.parentElement.children[0].textContent
+            })
+            getData = getData[0]
+            document.querySelector('#img-modal-part3').src = getData.img
+            document.querySelector('#ElemPrice').innerHTML = getData.price.toLocaleString('fa-IR') + "تومان"
+            document.querySelector('#ElemDisPrice').innerHTML = getData.disPrice.toLocaleString('fa-IR')
+            document.querySelector('#title-modal-part3').innerHTML = getData.title
+            document.querySelector('.show-modal-comment').innerHTML = getData.comment
+            let modal = document.querySelector('#myModal')
+            if (e.target.id == "showModal") {
+                modal.style.display = 'flex'
+                modal.style.animation = 'fadeIn 0.5s forwards'
+                part3.style.filter = 'blur(10px)'
+            }
+            let closeModal = document.querySelector('.X')
+            closeModal.addEventListener('click', () => {
+                part3.style.filter = 'blur(0px)'
+                modal.style.animation = 'fadeOut 0.5s forwards'
+                modal.addEventListener('animationend', function () {
+                    modal.style.display = 'none'; // Hide the modal after animation
+                }, { once: true });
+            })
+        })
+    </script>
+    <!-- ! body part4 -->
+    <div class="part4Body">
+        <div class="header-part4">
+            <div class="header-part3">
+                <img src="./images//img4.svg" alt="">
+                <h3>نظرات هنرجویان ساب لرن</h3>
+            </div>
+        </div>
+        <!-- ! swiper temp -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="./images/avater.png" alt="">
+                        <h3 id="h3-swiper">یوسف</h3>
+                        <p id="type-swiper">دانشجو</p>
+                        <p id="comment-swiper">
+                            برنامه نویسا جادوگران آینده هستند چون کارهای رو بلدند که خیلیا اصلا نمیدوند یعنی چی؟؟؟
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="./images/avater.png" alt="">
+                        <h3 id="h3-swiper">مجتبی هاتفی</h3>
+                        <p id="type-swiper">دانشجو</p>
+                        <p id="comment-swiper">من قبل از دوره مگافرانت یه دوره دیگه از html و css رو به قیمت ۱ میلیون و
+                            ۵۰۰ هزار تومن خریده بودم. وقتی توی این دوره شرکت کردم و فیلم های html رو دیدم خیلی از مفاهیم
+                            برام آشنایی داشتن و خیلیای دیگه رو اصلا نمی‌شناختم. به نظرم جزو ۱۰ دوره‌ برنامه نویسی عالی
+                            در تمام ایرانه.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="./images/avater2.png" alt="">
+                        <h3 id="h3-swiper">نگاره عبادی</h3>
+                        <p id="type-swiper">دانشجو</p>
+                        <p id="comment-swiper">برنامه نویسا جادوگران آینده هستند چون کارهای رو بلدند که خیلیا اصلا
+                            نمیدوند یعنی چی؟؟؟ </p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="./images/avater.png" alt="">
+                        <h3 id="h3-swiper">اکبر رضایی</h3>
+                        <p id="type-swiper">دانشجو</p>
+                        <p id="comment-swiper">ساب لرن یک تیم کامل و برنامه نویس هست که اجزای اون خودشون حرفه ای هستند
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener('load', (e) => {
+                var swiper = new Swiper(".mySwiper", {
+                    effect: "cards",
+                    grabCursor: true,
+                });
+            })
+        </script>
+    </div>
+    <!-- ! body part5 -->
+    <div class="part5Body">
+        <site-body-part5 img="./images/header-part4.png"></site-body-part5>
+    </div>
+    <!-- ! footer component custom element -->
+    <site-footer></site-footer>
+
+    <script type="module" src="./js/app.js"></script>
+    <script src="./librarys/swiper.js"></script>
+</body>
+
+</html>

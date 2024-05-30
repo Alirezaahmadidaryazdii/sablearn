@@ -1,0 +1,12 @@
+
+.row-product{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item{
+    display: flex;
+}
+.product-item img{
+    width: 100px;
+}
